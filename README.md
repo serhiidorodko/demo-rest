@@ -1,1 +1,2 @@
-Spring REST tutorial 
+# Spring REST tutorial 
+MVC + Spring JPA + H2
