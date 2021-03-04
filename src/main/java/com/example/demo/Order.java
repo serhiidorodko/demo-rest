@@ -9,16 +9,16 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "CUSTOMER_ORDER")
-public class Order {
+class Order {
 
     private @Id @GeneratedValue Long  id;
     private String description;
-    private String status;
+    private Status status;
 
     Order(){
 
     }
-    Order(String description, String status){
+    Order(String description, Status status){
         this.description = description;
         this.status = status;
     }
@@ -28,7 +28,7 @@ public class Order {
     public String getDescription() {
         return description;
     }
-    public String getStatus() {
+    public Status getStatus() {
         return status;
     }
     public void setId(Long id) {
@@ -37,7 +37,7 @@ public class Order {
     public void setDescription(String description) {
         this.description = description;
     }
-    public void setStatus(String status) {
+    public void setStatus(Status status) {
         this.status = status;
     }
 
@@ -61,7 +61,7 @@ public class Order {
         return "Order{" +
             "id=" + this.id +
             ", description='" + this.description + '\'' +
-            ", status='" + this.status + '\'';
+            ", status=" + this.status + "}";
     }
 
 }
