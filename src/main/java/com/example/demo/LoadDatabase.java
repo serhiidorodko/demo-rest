@@ -15,11 +15,11 @@ class LoadDatabase {
         return args -> {
             employeeRepo.save(new Employee("Serhii", "Dorodko", "assistant"));
             employeeRepo.save(new Employee("Kate", "Dorodko", "capitan"));
-            log.info("Preloaded records in Employee repository: \n" + employeeRepo.findAll().toString());
+            employeeRepo.findAll().forEach(employee -> log.info("Preloaded " + employee));
 
-            orderRepo.save(new Order("Description 1", Status.COMPLETED));
-            log.info("Preloaded records in Order repository: \n" + orderRepo.findAll().toString());
-            
+            orderRepo.save(new Order("Pizza", Status.COMPLETED));
+            orderRepo.save(new Order("Salo", Status.IN_PROGRESS));
+            orderRepo.findAll().forEach(employee -> log.info("Preloaded " + employee));            
         };
     }
 }
